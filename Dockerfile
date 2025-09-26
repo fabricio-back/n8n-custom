@@ -4,8 +4,8 @@ FROM n8nio/n8n:latest
 # Muda para o usuário root para ter permissão de instalar pacotes
 USER root
 
-# Atualiza a lista de pacotes e instala o Chromium
-RUN apt-get update && apt-get install -y chromium && apt-get clean
+# Atualiza a lista de pacotes e instala o Chromium (Alpine Linux usa apk)
+RUN apk update && apk add --no-cache chromium && rm -rf /var/cache/apk/*
 
 # Retorna para o usuário 'node' padrão do n8n por segurança
 USER node
