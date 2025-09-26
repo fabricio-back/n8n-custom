@@ -111,6 +111,36 @@ docker-compose up -d
 
 Este projeto está sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
-## 📞 Suporte
+## � Troubleshooting
 
-Se você encontrar problemas ou tiver dúvidas, abra uma [issue](https://github.com/seu-usuario/n8n-custom/issues) no GitHub.
+### Bad Gateway Error
+Se você receber um erro "Bad Gateway":
+
+1. **Verifique se o container está rodando**:
+   ```bash
+   docker ps
+   ```
+
+2. **Verifique os logs do container**:
+   ```bash
+   docker logs n8n-custom
+   ```
+
+3. **Teste a conectividade**:
+   ```bash
+   curl http://localhost:5678/
+   ```
+
+4. **Reinicie o container**:
+   ```bash
+   docker restart n8n-custom
+   ```
+
+### Container não inicia
+- Verifique se a porta 5678 não está sendo usada por outro serviço
+- Confirme que as variáveis de ambiente estão corretas
+- Verifique os logs para erros específicos
+
+## �📞 Suporte
+
+Se você encontrar problemas ou tiver dúvidas, abra uma [issue](https://github.com/fabricio-back/n8n-custom/issues) no GitHub.
