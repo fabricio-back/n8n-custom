@@ -1,5 +1,7 @@
 .git
 .github
 *.md
-docker-compose.yml
+docker-compose*
 .dockerignore
+entrypoint.sh
+.coolify
